@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Code Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Tutorial.html">Tutorials</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="container">
+    <h2>Profile</h2>
+    <p><strong>Username:</strong> <span id="username"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Bio:</strong> Enthusiastic developer and tech enthusiast.</p>
+    <a href="Log out.html" class="btn">Logout</a>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+    <p>@N:Why do programmers prefer dark mode? Because light attracts bugs.</p>
+</footer>
+
+<script>
+    // Retrieve the username and email from local storage
+    document.getElementById('username').textContent = localStorage.getItem('username') || 'Guest';
+    document.getElementById('email').textContent = localStorage.getItem('email') || 'Not provided';
+</script>
+
+</body>
+</html>

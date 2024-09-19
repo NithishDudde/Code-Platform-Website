@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .output {
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Python Tutorial</h1>
+    <p>Write Python code in the editor below and click "Run Python Code" to see the output.</p>
+
+    <textarea id="python-code" placeholder="Write Python code here..."></textarea>
+    <button onclick="submitPythonCode()">Run Python Code</button>
+    <div id="python-output" class="output"></div>
+
+    <script>
+        async function submitPythonCode() {
+    const code = document.getElementById('python-code').value;
+    const response = await fetch('/execute_python', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ code: code })
+    });
+    const result = await response.json();
+    document.getElementById('python-output').textContent = result.output || result.error;
+}
+
+    </script>
+
+</body>
+</html>

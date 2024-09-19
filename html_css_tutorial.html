@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML & CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .editor-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        textarea {
+            width: 45%;
+            height: 300px;
+            margin: 10px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        iframe {
+            width: 45%;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML & CSS Tutorial</h1>
+    <p>Write HTML and CSS code in the editor below to see live previews.</p>
+
+    <div class="editor-container">
+        <textarea id="html-css-editor" placeholder="Write HTML & CSS here..."></textarea>
+        <iframe id="preview"></iframe>
+    </div>
+
+    <script>
+        const htmlCssEditor = document.getElementById('html-css-editor');
+        const preview = document.getElementById('preview');
+
+        function updatePreview() {
+            const content = htmlCssEditor.value;
+            preview.srcdoc = content;
+        }
+
+        htmlCssEditor.addEventListener('input', updatePreview);
+        updatePreview(); // Initial call to populate preview
+    </script>
+
+</body>
+</html>

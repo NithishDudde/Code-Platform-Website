@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn C Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .output {
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>C Programming Tutorial</h1>
+    <p>Write C code in the editor below and click "Run C Code" to see the output.</p>
+
+    <textarea id="c-code" placeholder="Write C code here..."></textarea>
+    <button onclick="submitCCode()">Run C Code</button>
+    <div id="c-output" class="output"></div>
+
+    <script>
+        async function submitCCode() {
+    const code = document.getElementById('c-code').value;
+    const response = await fetch('/compile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ code: code })
+    });
+    const result = await response.json();
+    document.getElementById('c-output').textContent = result.output || result.error;
+}
+
+    </script>
+
+</body>
+</html>
