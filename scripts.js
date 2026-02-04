@@ -1,2 +1,3 @@
 // scripts.js
-console.log('JavaScript is working!');
+// Common JavaScript file for the learning platform
+console.log("Tutorial platform loaded successfully");
