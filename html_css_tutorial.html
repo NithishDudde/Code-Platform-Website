@@ -11,46 +11,37 @@
         }
         .editor-container {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
         }
-        textarea {
-            width: 45%;
+        textarea, iframe {
+            width: 100%;
             height: 300px;
-            margin: 10px;
+            margin: 10px 0;
             font-family: monospace;
-            font-size: 14px;
-        }
-        iframe {
-            width: 45%;
-            height: 300px;
-            border: 1px solid #ccc;
-            margin: 10px;
-            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
 
-    <h1>HTML & CSS Tutorial</h1>
-    <p>Write HTML and CSS code in the editor below to see live previews.</p>
+<h1>HTML & CSS Tutorial</h1>
+<p>Write HTML & CSS to see live output.</p>
 
-    <div class="editor-container">
-        <textarea id="html-css-editor" placeholder="Write HTML & CSS here..."></textarea>
-        <iframe id="preview"></iframe>
-    </div>
+<textarea id="editor"></textarea>
+<iframe id="preview"></iframe>
 
-    <script>
-        const htmlCssEditor = document.getElementById('html-css-editor');
-        const preview = document.getElementById('preview');
+<script>
+    const editor = document.getElementById("editor");
+    const preview = document.getElementById("preview");
 
-        function updatePreview() {
-            const content = htmlCssEditor.value;
-            preview.srcdoc = content;
-        }
+    editor.value = "<h1>Hello World</h1><style>h1{color:blue;}</style>";
 
-        htmlCssEditor.addEventListener('input', updatePreview);
-        updatePreview(); // Initial call to populate preview
-    </script>
+    function updatePreview() {
+        preview.srcdoc = editor.value;
+    }
+
+    editor.addEventListener("input", updatePreview);
+    updatePreview();
+</script>
 
 </body>
 </html>
