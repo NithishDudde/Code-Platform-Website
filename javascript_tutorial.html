@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Learn JavaScript</title>
+<style>
+body { font-family: Arial; margin: 20px; }
+textarea { width: 100%; height: 250px; font-family: monospace; }
+.output {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    white-space: pre-wrap;
+}
+button { padding: 10px 15px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h1>JavaScript Tutorial</h1>
+<p>Write JavaScript code and run it directly in the browser.</p>
+
+<textarea id="js-code">
+console.log("Hello JavaScript");
+</textarea>
+
+<button onclick="runJS()">Run JavaScript</button>
+
+<div id="output" class="output">Output will appear here...</div>
+
+<script>
+function runJS() {
+    const code = document.getElementById("js-code").value;
+    const output = document.getElementById("output");
+    output.textContent = "";
+
+    const originalLog = console.log;
+    console.log = function(message) {
+        output.textContent += message + "\n";
+    };
+
+    try {
+        eval(code);
+    } catch (error) {
+        output.textContent = "Error: " + error.message;
+    }
+
+    console.log = originalLog;
+}
+</script>
+
+</body>
+</html>
