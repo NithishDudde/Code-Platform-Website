@@ -7,76 +7,52 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 3px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
         }
         .button-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            max-width: 300px;
         }
         .button-container a {
-            display: inline-block;
-            padding: 10px 20px;
+            padding: 10px;
             text-align: center;
             background-color: #007BFF;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        .button-container a:hover {
-            background-color: #0056b3;
         }
         footer {
-            background-color: #333;
+            margin-top: auto;
+            background: #333;
             color: #fff;
             text-align: center;
             padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 98%;
-        }
-
-        footer p {
-            margin: 0;
         }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to the Programming Tutorials</h1>
-    <p>Select a tutorial to get started:</p>
-       <a href="https://www.w3schools.com/html/default.asp">coding concepts</a>
-       <br>
-       <br>
-    <div class="button-container">
-        <a href="html_css_tutorial.html">Learn HTML & CSS</a>
-        <a href="c_programming_tutorial.html">Learn C Programming</a>
-        <a href="python_tutorial.html">Learn Python</a>
-        <a href="index.html">Return To Home</a>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <footer>
-        <p>@N:Programming is learned by writing programs</p>
-    </footer>
-    <script src="scripts.js"></script>
+<h1>Programming Tutorials</h1>
+<p>Select a tutorial to get started:</p>
 
+<a href="https://www.w3schools.com" target="_blank">Coding Concepts (External)</a>
+
+<div class="button-container">
+    <a href="html_css_tutorial.html">HTML & CSS</a>
+    <a href="c_programming_tutorial.html">C Programming</a>
+    <a href="python_tutorial.html">Python</a>
+    <a href="learn.html">Return to Home</a>
+</div>
+
+<footer>
+    <p>Programming is learned by writing programs</p>
+</footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>
